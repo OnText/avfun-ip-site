@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-zh="AVFUN IP检测" data-en="AVFUN IP Check">AVFUN IP检测</title>
+    <meta name="description" 
+          data-zh="实时IP检测 | 精准IDC识别 | 安全风险分析"
+          data-en="Real-time IP Analysis | IDC Detection | Security Risk Assessment">
+    <meta name="keywords" 
+          data-zh="IP查询,网络安全,IDC检测,IP风险分析"
+          data-en="IP lookup, cybersecurity, IDC detection, IP risk analysis">
+    <meta property="og:title" 
+          data-zh="AVFUN IP检测中心"
+          data-en="AVFUN IP Analysis Center">
+    <meta property="og:image" content="https://avfun.org/logo-social.png">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"AVFUN IP检测","operatingSystem":"跨平台","applicationCategory":"网络工具"}
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+    <div class="watermark-bg">AVFUN.ORG</div>
+
+    <div class="main-wrapper">
+        <nav class="nav-bar">
+            <a href="javascript:void(0)" class="logo-link" id="logoLink" style="text-decoration: none;">
+                <span class="full-logo">AVFUN.ORG</span>
+            </a>
+            <button class="lang-switch" id="langBtn">
+                <span class="current-lang">EN</span>
+                <div class="lang-glow"></div>
+            </button>
+        </nav>
+
+        <div class="main-card">
+            <h1 class="card-title" data-zh="IP检测" data-en="IP Check"></h1>
+            
+            <div class="input-wrapper">
+                <input type="text" 
+                       id="ipInput"
+                       data-placeholder-zh="输入IP/域名/ASN"
+                       data-placeholder-en="Enter IP/Domain/ASN">
+                
+                <div class="cf-turnstile" 
+                     data-sitekey="0x4AAAAAABDoEyaWZ7jKzgmj"
+                     data-callback="onVerify"
+                     data-language="zh"
+                     style="margin:15px 0"></div>
+
+                <button class="scan-button" id="scanBtn" disabled>
+                    <span class="btn-glow"></span>
+                    <span class="btn-text" data-zh="立即查询" data-en="Start Scan"></span>
+                </button>
+            </div>
+
+            <div class="result-panel" id="resultPanel">
+                <div class="info-row">
+                    <label data-zh="IP地址" data-en="IP Address"></label>
+                    <span class="info-value copyable" id="ipValue"></span>
+                </div>
+                <div class="info-row">
+                    <label data-zh="地理位置" data-en="Location"></label>
+                    <span class="info-value copyable" id="locationValue"></span>
+                </div>
+                <div class="info-row">
+                    <label data-zh="ASN" data-en="ASN"></label>
+                    <span class="info-value copyable" id="asnValue"></span>
+                </div>
+                <div class="info-row">
+                    <label data-zh="ASN所有者" data-en="ASN Owner"></label>
+                    <span class="info-value copyable" id="asnOwnerValue"></span>
+                </div>
+                <div class="info-row">
+                    <label data-zh="IP属性" data-en="IP Type"></label>
+                    <span class="info-value" id="ipTypeValue"></span>
+                </div>
+                <div class="info-row">
+                    <label data-zh="网络等级" data-en="Risk Level"></label>
+                    <span class="info-value" id="riskValue"></span>
+                </div>
+                <div class="info-row">
+                    <label data-zh="原生IP" data-en="Native IP"></label>
+                    <span class="info-value" id="nativeIpValue"></span>
+                </div>
+            </div>
+
+            <div class="promotion-banner" id="promotionBanner">
+                <h3 data-zh="推荐云服务商" data-en="Recommended Providers"></h3>
+                <div class="provider-grid" id="providerGrid"></div>
+            </div>
+
+            <div class="share-container" id="sharePanel">
+                <button class="share-btn" data-platform="github">GitHub</button>
+                <button class="share-btn" data-platform="x">X</button>
+                <button class="share-btn" data-platform="telegram">Telegram</button>
+                <button class="share-btn" data-platform="weibo">微博</button>
+                <button class="share-btn" data-platform="wechat">微信</button>
+                <button class="share-btn" data-platform="copy">复制链接</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="global-footer">
+        <span data-zh="© 2025 AVFUN.ORG 版权所有" data-en="© 2025 AVFUN.ORG All Rights Reserved"></span>
+    </footer>
+
+    <div class="expert-modal" id="expertModal">
+        <div class="modal-content">
+            <h3 data-zh="专家模式已解锁" data-en="Expert Mode Unlocked"></h3>
+            <p data-zh="每日5次免费使用权限，需推荐1位好友访问本站" 
+               data-en="5 free queries daily, requires inviting 1 friend"></p>
+            <button class="modal-close" id="modalClose">×</button>
+            <div class="referral-box">
+                <input type="text" id="referralLink" readonly>
+                <button class="copy-referral" data-zh="复制推荐链接" data-en="Copy Link"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
