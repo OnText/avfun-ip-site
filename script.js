@@ -1,5 +1,5 @@
 ﻿let isEnglish = false;
-const workerEndpoint = ''https://avfun.org/api/ip-check'';
+const workerEndpoint = 'https://avfun.org/api/ip-check';
 let turnstileToken = null;
 let queryCount = 0;
 
